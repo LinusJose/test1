@@ -1,3 +1,50 @@
+<h1 style="text-align: center">Hello{{str1}}</h1>
+<h1 style="text-align: center">Hello{{Str}}</h1>
+    <input type="text" value="{{data.tech1}}">
+    <Button (click)="fnCalling()">Good Morning</Button>
+    <Button (click)="fn1Calling()">Good Afternoon</Button>
+    <div style="text-align: center">Count {{count}}</div>
+    <h1 style="text-align: center">the count is {{EorO}}</h1>
+    <button (click)="count1()">Count</button>
+    <button (click)="count2()">Count Decrese</button>
+    <h1 style="text-align: center">the sum of 2 count is {{sum}}</h1>
+    <button (click)="add()">Find sum of 2 count</button>
+
+    <h1 style="text-align: center">2 way binding</h1>
+    <div style="text-align: center">
+    <input type="number"[(ngModel)]="count3">
+    <h1 [hidden]="is_hidden">{{count3}} {{str4}}</h1>
+    <button (click)="clear()">clear</button>
+
+    <button (click)="check()">check</button>
+    </div>
 
 
-<router-outlet></router-outlet>
+
+
+<table>
+    <thead>
+        <th>name</th>
+        <th>price</th>
+    </thead>
+    <tbody *ngFor="let item of fruits">
+    <tr *ngIf="item.price>80">
+        <td>{{item.name}}</td>
+        <td>{{item.price}}</td>
+
+    </tr>
+    </tbody>
+</table>
+
+
+
+<ul class="nav justify-content-center">
+    <li class="nav-item">
+      <a [routerLink]="['/home']" >Home</a>
+    </li>
+    <li class="nav-item">
+      <a [routerLink]="['/contact']">contact</a>
+    </li>
+   
+  </ul>
+  <router-outlet></router-outlet>
